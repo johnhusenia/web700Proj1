@@ -1,0 +1,144 @@
+/* Body Styling */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Page title styling */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #2a2a72;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #ccc;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Collection item styling */
+.collection-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.collection-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.collection-image .rounded {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: fill;  /* Ensures the image fits inside the box without stretching */
+    border: 2px solid #2a2a72;
+}
+
+/* img .imgofpageset{
+
+    width: 240px;
+    height: 240px;
+    border-radius: 240px;
+    object-fit: contain; 
+    border: 2px solid #2a2a72;
+} */
+
+
+/* Text container */
+.collection-text {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+/* Set title and theme badge styling */
+.collection-text h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.theme-badge {
+    display: inline-block;
+    background-color: #2a9d8f;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Year and parts styling */
+.collection-text span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Details button styling */
+.details-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.details-button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.details-button:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .collection-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .collection-image .rounded {
+        margin-bottom: 10px;
+    }
+
+    .details-button-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,204 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* global styles */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7d0a9;
+    color: #333;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+
+/* section styles */
+section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f7d0a9;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; */
+}
+.container1 {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Hero Section */
+.about-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Alternate Row Colors for Table */
+table tr:nth-child(odd) td {
+  background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Pacifico', cursive;
+  color: #333;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Links */
+a {
+  color: #4e54c8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #8f94fb;
+  text-decoration: underline;
+}
+
+/* List Styles */
+ol, ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+ol ul, ul ol {
+  padding-left: 15px;
+}
+
+ /* Image Styling  */
+ /* .images-section {
+  display: flex;               
+  justify-content: center;     
+  flex-wrap: wrap;           
+} */
+
+.images-section img {
+    width: 150px;         
+    height: 150px;        
+    object-fit: cover;    
+    margin: 10px;         
+    border-radius: 8px;   
+    
+  }
+
+/* Audio & Video Styling */
+audio, video {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #00BCD4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097A7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #B0BEC5;
+  cursor: not-allowed;
+  color: #F5F5F5;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px; 
+  border: 2px solid #DDD;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Title styling */
+.container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.btn-primary {
+  background-color: #f7d0a9; /* Primary button color */
+  color: white; /* Text color */
+
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically if needed */
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}

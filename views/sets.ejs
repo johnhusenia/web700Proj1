@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practice</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+
+<body>
+<!-- Navbar -->
+<%- include("partials/navbar", {page: "/sets"}) %>
+
+	<br />
+  <p>
+    This page will alter sets in the array.
+</p>
+
+    <section class="bg-light text-center py-5">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Collection</h1>
+            <p class="lead text-muted">Browse the entire collection.  Click the theme to filter by themes such as:<br /><a href="/lego/sets?theme=Technic" class="btn btn-primary btn-sm">Technic</a> <a href="/lego/sets?theme=Classic Town" class="btn btn-primary btn-sm">Classic Town</a>  <a href="/lego/sets?theme=Supplemental" class="btn btn-primary btn-sm">Supplemental</a> <a href="/lego/sets" class="btn btn-primary btn-sm">Reset Filter</a> </p>
+            
+        </div>
+    </section>
+
+    <table class="table table-striped">
+        <tbody>
+            <% sets.forEach(set => { %>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center"> 
+                  <div class="rounded" style="width: 8rem; height: 8rem; background-image: url('<%= set.img_url%>'); background-size: cover; background-position: center;"></div>
+                </div>
+              </td>
+              <td>
+                <%= set.name%> | <a href="/lego/sets?theme=<%= set.theme %>" class="btn btn-primary btn-sm"><%= set.theme %></a>
+              </td>
+              <td><span class="fw-bold">Year: </span> <%= set.year%> - <span class="fw-bold">Parts:</span> <%= set.numparts%></td>
+              <td>
+                <a href="/lego/sets/<%= set.set_num %>" class="btn btn-secondary btn-sm">Details</a>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

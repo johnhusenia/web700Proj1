@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+        <link rel="stylesheet" href="/css/theme.css" />
+</head>
+    </head>
+    <body>
+        <%- include("partials/navbar", {page: "/about"}) %>
+
+ <!-- About Section -->
+  <!-- <section class="about-section text-center"> -->
+    <div class="container1">
+        <h1>About</h1>
+        <p>Everything you want to know about me - the designer & developer.</p>
+        <p>My name is John Clarence Husenia, and I'm currently studying at Seneca Polytechnic.</p>
+        <p>I'm passionate about:</p>
+        <ul>
+          <li>Cooking and baking</li>
+          <li>Traveling</li>
+          <li>Triathlons</li>
+          <li>Photography</li>
+          <li>Coffee</li>
+          <li>Fishing</li>
+        </ul>
+      </div>
+    <!-- </section> -->
+    
+      <!-- Theme Demo Section -->
+      <section class="theme-demo-section">
+        <h2>Theme Demo</h2>
+        <p>The following sections will demonstrate how common HTML elements are rendered using my custom theme.</p>
+      </section>
+    
+      <!-- Tables Section -->
+      <section class="tables-section">
+        <h2>Tables</h2>
+        <table class="table">
+          <caption>My Interests and Hobbies</caption>
+          <thead>
+            <tr>
+              <th>Interest</th>
+              <th>Description</th>
+              <th>Frequency</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cooking</td>
+              <td>Creating new recipes and experimenting in the kitchen</td>
+              <td>Weekly</td>
+              <td>Home</td>
+            </tr>
+            <tr>
+              <td>Baking</td>
+              <td>Making desserts and pastries</td>
+              <td>Weekly</td>
+              <td>Home</td>
+            </tr>
+            <tr>
+              <td>Traveling</td>
+              <td>Exploring new cultures and destinations</td>
+              <td>Seasonally</td>
+              <td>Various Locations</td>
+            </tr>
+            <tr>
+              <td>Photography</td>
+              <td>Capturing landscapes, events, and special moments</td>
+              <td>Often</td>
+              <td>Outdoors</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">End of Interests List</td>
+            </tr>
+          </tfoot>
+        </table>
+    
+        <table class="table">
+          <caption>John Clarence Husenia's Hobbies and Interests</caption>
+          <thead>
+            <tr>
+              <th>Hobby</th>
+              <th>Skill Level</th>
+              <th>Favorite Aspect</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Triathlon</td>
+              <td rowspan="2">Intermediate</td>
+              <td>Challenge</td>
+              <td>Outdoors</td>
+            </tr>
+            <tr>
+              <td>Endurance</td>
+              <td>International</td>
+            </tr>
+            <tr>
+              <td>Cooking & Baking</td>
+              <td>Expert</td>
+              <td>Creativity</td>
+              <td>Home Kitchen</td>
+            </tr>
+            <tr>
+              <td>Photography</td>
+              <td>Intermediate</td>
+              <td>Capturing Moments</td>
+              <td>Various Locations</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">End of Hobbies & Interests List</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p>This section showcases John Clarence Husenia's hobbies and interests with details on skill level, favorite aspects, and typical locations.</p>    
+      </section>
+    
+      <!-- Lists Section -->
+      <section class="lists-section">
+        
+        <h2>Favorite Activities</h2>
+        <div class="container2"></div>
+        <ol>
+          <li>Participating in triathlons</li>
+          <ul>
+            <li>Swimming</li>
+            <li>Cycling</li>
+            <li>Running</li>
+          </ul>
+          <li>Exploring new coffee shops</li>
+          <li>Fishing in local lakes</li>
+          <li>Traveling to new countries</li>
+          <li>Documenting my adventures through photography</li>
+        </ol>
+      </div>
+        <p>This section demonstrates an ordered list of my favorite activities.</p>
+      
+      </section>
+    
+      <!-- Images Section -->
+      <section class="images-section">
+        <h2>Images</h2>
+        <div class="container2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Lego_Color_Bricks.jpg/440px-Lego_Color_Bricks.jpg" alt="Lego Bricks"
+        style="width: 150px; height: 150px; object-fit: cover; margin: 10px; border-radius: 8px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1200px-Cat_August_2010-4.jpg" alt="Cat"
+        style="width: 150px; height: 150px; object-fit: cover; margin: 10px; border-radius: 8px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flower_poster_2.jpg" alt="Flower"
+        style="width: 150px; height: 150px; object-fit: cover; margin: 10px; border-radius: 8px;">
+      </div>
+        <p>This section includes images with alt text for accessibility purposes.</p>
+    </section>
+    
+      <!-- Audio Section -->
+      <section class="audio-section">
+        <h2>Audio</h2>
+        <audio controls>
+          <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-audio.mp3" type="audio/mpeg">
+          <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-audio.ogg" type="audio/ogg">
+          Your browser does not support the audio element.
+        </audio>
+        <p>This section contains an HTML5 audio player to play audio files.</p>
+      </section>
+    
+      <!-- Video Section -->
+      <section class="video-section">
+        <h2>Video</h2>
+        <video controls width="600">
+          <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-video.mp4" type="video/mp4">
+          <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2024/web700/A4/sample-video.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <p>This section contains an HTML5 video player to play video files.</p>
+      </section>
+
+    </body>
+</html>

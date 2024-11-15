@@ -1,0 +1,65 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* global styles */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7d0a9;
+    color: #333;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+/* .gradient-background {
+    background: linear-gradient(135deg, rgba(201, 168, 135, 0.8), rgba(247, 208, 169, 0.8));
+  } */
+
+/* navbar styles */
+.navbar {
+  background: linear-gradient(135deg, #c9a887, #f7d0a9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  font-family: "Bebas Neue", sans-serif;
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+  color: #e6e6e6 !important;
+}
+
+.nav-link {
+  font-family: "Bebas Neue", sans-serif;
+  color: #f0f0f0 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* section styles */
+section {
+    background: url('https://images.pexels.com/photos/4947406/pexels-photo-4947406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+  max-width: 100%;
+  /* margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; */
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+

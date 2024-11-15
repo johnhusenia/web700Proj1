@@ -1,0 +1,111 @@
+/* Body Styling */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Styling */
+.bg-light {
+    background-color: #f4f4f9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.py-5 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Heading and Paragraph */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #2a2a72;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #ccc;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #2a2a72;
+    outline: none;
+}
+
+.submit-button {
+    background-color: #2a9d8f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #219e7b;
+    transform: translateY(-2px);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .submit-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
