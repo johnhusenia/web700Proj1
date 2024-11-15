@@ -1,6 +1,5 @@
 const fs = require('fs');
-const simpleGit = require('simple-git');
-const git = simpleGit();  // Initialize simple-git
+
 class LegoData {
     sets;
     themes;
@@ -141,174 +140,74 @@ class LegoData {
 
 // This functions are adding and deleting files on json file already
 
- pushChangesToGitHub(commitMessage) {
-    return new Promise((resolve, reject) => {
-        git.add('./*') // Add all files
-            .commit(commitMessage) // Commit with a custom message
-            .push('origin', 'main', (err, result) => {  // Push to the 'main' branch
-                if (err) {
-                    reject('Error pushing to GitHub: ' + err);
-                } else {
-                    resolve('Changes pushed to GitHub');
-                }
-            });
-    });
-}
+    addsets(newObject) {
+        console.log('Fadd is running');
+        // this.sets.push(newObject);
 
-// Add new set and push changes to GitHub
-addsets(newObject) {
-    console.log('Fadd is running');
-    
-    return new Promise((resolve, reject) => {
-        const filePath = 'data/setData.json';
-        
-        this.sets.push(newObject);
-        
-        fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) {
+        return new Promise((resolve, reject) => {
+
+            const filePath = 'data/setData.json';
+
+            this.sets.push(newObject);
+            fs.readFile(filePath, 'utf8', (err, data) => {
+              if (err) {
                 reject('Error reading the file: ' + err);
                 return;
-            }
-
-            let jsonData;
-            try {
+              }
+        
+              let jsonData;
+              try {
                 jsonData = JSON.parse(data); 
-            } catch (parseErr) {
+              } catch (parseErr) {
                 reject('Error parsing JSON: ' + parseErr);
                 return;
-            }
-
-            jsonData.push(newObject);
-            const updatedJson = JSON.stringify(jsonData, null, 2);
-
-            fs.writeFile(filePath, updatedJson, 'utf8', (writeErr) => {
+              }
+        
+              jsonData.push(newObject);
+        
+              const updatedJson = JSON.stringify(jsonData, null, 2);
+        
+              fs.writeFile(filePath, updatedJson, 'utf8', (writeErr) => {
                 if (writeErr) {
-                    reject('Error writing to file: ' + writeErr);
+                  reject('Error writing to file: ' + writeErr);
                 } else {
-                    // Now push changes to GitHub
-                    pushChangesToGitHub('Added new set: ' + newObject.set_num)
-                        .then((gitSuccessMessage) => {  // Use the success message here, not a variable
-                            console.log(gitSuccessMessage);  // Log GitHub push success message
-                            resolve(newObject);
-                        })
-                        .catch((gitError) => {
-                            reject(gitError);
-                        });
+                  resolve(newObject);
                 }
+              });
             });
-        });
-    });
-}
+          });
+      }
 
-// Delete set and push changes to GitHub
-deleteSet(newObject) {
-    console.log('Fdeletefunction is running');
-    
-    return new Promise((resolve, reject) => {
-        const filePath = 'data/setData.json';
+      deleteSet(newObject) {
+        console.log('Fdeletefunction is running');
+        return new Promise((resolve, reject) => {
+            const filePath = 'data/setData.json';
 
-        fs.readFile(filePath, 'utf8', (err, data) => {
-            if (err) {
+            fs.readFile(filePath, 'utf8', (err, data) => {
+              if (err) {
                 reject('Error reading the file: ' + err);
                 return;
-            }
+              }
+        
+              let jsonData = JSON.parse(data);
+             const filteredData = jsonData.filter(item => item.set_num != newObject); // getting all objects that are not = set_num
 
-            let jsonData = JSON.parse(data);
-            const filteredData = jsonData.filter(item => item.set_num !== newObject.set_num); // Get all sets except the one being deleted
-
-            if (jsonData.length === filteredData.length) {
-                reject('Set not found');
-                return;
-            }
-
-            fs.writeFile(filePath, JSON.stringify(filteredData, null, 2), 'utf8', (writeErr) => {
-                if (writeErr) {
-                    reject('Error writing to file: ' + writeErr);
+                if (jsonData.length === filteredData.length) {
+                    reject('Set not found');
                     return;
                 }
-
-                // Push changes to GitHub after deleting
-                pushChangesToGitHub('Deleted set: ' + newObject.set_num)
-                    .then((gitSuccessMessage) => {  // Use the success message here, not a variable
-                        console.log(gitSuccessMessage);  // Log GitHub push success message
-                        resolve('Data deleted successfully');
-                    })
-                    .catch((gitError) => {
-                        reject(gitError);
-                    });
+        
+              fs.writeFile('data/setData.json', JSON.stringify(filteredData, null, 2), (err) => {
+                if (err) {
+                    console.error("Error writing file:", err);
+                    return res.status(500).send("Failed to delete data.");
+                }
+                resolve('Data deleted successfully');
+                this.sets = filteredData;
+              });
             });
-        });
-    });
-}
-
-
-    // addsets(newObject) {
-    //     console.log('Fadd is running');
-    //     // this.sets.push(newObject);
-
-    //     return new Promise((resolve, reject) => {
-
-    //         const filePath = 'data/setData.json';
-
-    //         this.sets.push(newObject);
-    //         fs.readFile(filePath, 'utf8', (err, data) => {
-    //           if (err) {
-    //             reject('Error reading the file: ' + err);
-    //             return;
-    //           }
-        
-    //           let jsonData;
-    //           try {
-    //             jsonData = JSON.parse(data); 
-    //           } catch (parseErr) {
-    //             reject('Error parsing JSON: ' + parseErr);
-    //             return;
-    //           }
-        
-    //           jsonData.push(newObject);
-        
-    //           const updatedJson = JSON.stringify(jsonData, null, 2);
-        
-    //           fs.writeFile(filePath, updatedJson, 'utf8', (writeErr) => {
-    //             if (writeErr) {
-    //               reject('Error writing to file: ' + writeErr);
-    //             } else {
-    //               resolve(newObject);
-    //             }
-    //           });
-    //         });
-    //       });
-    //   }
-
-    //   deleteSet(newObject) {
-    //     console.log('Fdeletefunction is running');
-    //     return new Promise((resolve, reject) => {
-    //         const filePath = 'data/setData.json';
-
-    //         fs.readFile(filePath, 'utf8', (err, data) => {
-    //           if (err) {
-    //             reject('Error reading the file: ' + err);
-    //             return;
-    //           }
-        
-    //           let jsonData = JSON.parse(data);
-    //          const filteredData = jsonData.filter(item => item.set_num != newObject); // getting all objects that are not = set_num
-
-    //             if (jsonData.length === filteredData.length) {
-    //                 reject('Set not found');
-    //                 return;
-    //             }
-        
-    //           fs.writeFile('data/setData.json', JSON.stringify(filteredData, null, 2), (err) => {
-    //             if (err) {
-    //                 console.error("Error writing file:", err);
-    //                 return res.status(500).send("Failed to delete data.");
-    //             }
-    //             resolve('Data deleted successfully');
-    //           });
-    //         });
-    //       });
-    //   }
+          });
+      }
 
       
 
